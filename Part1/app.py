@@ -88,7 +88,7 @@ class ClueGame:
 	def character_movements(self):
 		def move_room():
 			while True:
-				selected_room = input(f"Select a room you would like to move to: {Mansion().get_rooms()}")
+				selected_room = input(f"Select a room you would like to move to: {Mansion().get_rooms()}: ")
 				if selected_room in Mansion().get_rooms():
 					print(f"You have selected: {selected_room}")
 					self.selected_room = selected_room
@@ -112,13 +112,11 @@ class ClueGame:
 					# Provide hints based on which parameter is incorrect
 					if self.solution['character'] != character:
 						print("Wrong Character.")
-						return "character"
-					elif self.solution['weapon'] != weapon:
+					if self.solution['weapon'] != weapon:
 						print("Wrong Weapon.")
-						return "weapon"
-					elif self.solution['room'] != room:
+					if self.solution['room'] != room:
 						print("Wrong Room.")
-						return "room"
+					return False
 			
 			def validator(question, actual):
 				while True:
@@ -141,29 +139,40 @@ class ClueGame:
 				if result is True:
 					break  # Correct suggestion, exit the loop
 				
-				# Provide hints on the second, third, and fourth attempts
-				if attempt == 2:
-					print(f"HINT: The correct Character is '{self.solution['character']}'.")
-				elif attempt == 3:
-					print(f"HINT: The correct Weapon is '{self.solution['weapon']}'.")
-				elif attempt == 4:
-					print(f"HINT: The correct Room is '{self.solution['room']}'.")
+				# Ask the user if they want to change rooms or continue retrying the suggestion
+				choice = input("Would you like to (1) retry suggestion or (2) change room? Enter 1 or 2: ")
+				if choice == '2':
+					move_room()  # Call the move room function
+					return  # Exit the suggestion loop since the user chose to change rooms
+				elif choice == '1':
+					# Provide a hint before retrying
+					if attempt == 1:
+						print("Let's try again! Remember to consider your previous guesses.")
+					elif attempt == 2:
+						print(f"HINT: The correct Character is '{self.solution['character']}'.")
+					elif attempt == 3:
+						print(f"HINT: The correct Weapon is '{self.solution['weapon']}'.")
+					elif attempt == 4:
+						print(f"HINT: The correct Room is '{self.solution['room']}'.")
+					
+					attempt += 1  # Increment the attempt count
+				else:
+					print("Invalid input. Please enter 1 or 2.")
 				
 				print("Let's start over with your suggestions.")
-				attempt += 1
 			
 			if attempt > 5:
 				print("You've exhausted all attempts. Please try again later.")
 		
 		# Main loop for player movement
 		while True:
-			movement = int(input(f"Enter 1 for Suggestion or Enter 2 for new room: "))
-			if movement in [1, 2]:
-				if movement == 2:
-					move_room()  # Assuming move_room is defined elsewhere
-				else:
-					make_suggestion()  # Call the suggestion function
-					return  # Exit the loop after making a suggestion
+			movement = input("Enter 1 for Suggestion or Enter 2 for new room: ")
+			if movement == '1':
+				make_suggestion()  # Call the suggestion function
+			elif movement == '2':
+				move_room()  # Call the move room function
+			else:
+				print("Invalid input. Please enter 1 or 2.")
 		
 	
 				
