@@ -1,4 +1,7 @@
 class Character:
+	"""
+	Initialize the characters with a name and a starting position
+	"""
 	def __init__(self, name, starting_position):
 		self.name = name
 		self.position = starting_position
