@@ -18,6 +18,12 @@ class ClueGame:
 		self.selected_weapon = ''
 	
 	def summary_generation(self):
+		# Ensure the Layout directory exists
+		layout_directory = "Layout"
+		if not os.path.exists(layout_directory):
+			os.makedirs(layout_directory)
+			logging.info(f"Created directory: {layout_directory}")
+		
 		character_sheet = pd.DataFrame(columns=["Character Name", "Starting Position"])
 		mansion_sheet = pd.DataFrame(columns=["Rooms"])
 		weapons_sheet = pd.DataFrame(columns=["Weapons"])
@@ -25,9 +31,9 @@ class ClueGame:
 		
 		for character in characters:
 			character_sheet = character_sheet._append({
-				"Character Name": character.name,
+				"Character Name":    character.name,
 				"Starting Position": character.position},
-			               ignore_index=True)
+				ignore_index=True)
 		
 		for room in Mansion().get_rooms():
 			mansion_sheet = mansion_sheet._append({"Rooms": room}, ignore_index=True)
@@ -37,11 +43,11 @@ class ClueGame:
 		
 		solution_sheet = solution_sheet._append({
 			"Character": self.solution.get('character'),
-			"Weapon": self.solution.get('weapon'),
-			"Room": self.solution.get('room')},
+			"Weapon":    self.solution.get('weapon'),
+			"Room":      self.solution.get('room')},
 			ignore_index=True)
-
-		file_name = os.path.join("Layout","Game_Set_Up.xlsx")
+		
+		file_name = os.path.join(layout_directory, "Game_Set_Up.xlsx")
 		try:
 			with pd.ExcelWriter(file_name, engine='openpyxl') as writer:
 				character_sheet.to_excel(writer, sheet_name='Character Definition', index=False)
