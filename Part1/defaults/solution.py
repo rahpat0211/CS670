@@ -6,6 +6,11 @@ from defaults.weapons import *
 
 
 class Solution:
+	"""
+	Randomly select a solution by selecting a character, weapon, and room.
+	Initialize only once, so we would avoid generating multiple solutions.
+	Return the solution as a dictionary.
+	"""
 	_instance = None
 	
 	def __new__(cls):
