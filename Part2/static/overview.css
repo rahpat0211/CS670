@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #E17888, #AE3B8B, #1C5789, #341514);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    display: flex;
+    justify-content: space-between; /* Space between left and right sections */
+    align-items: stretch; /* Stretch sections to fill the container */
+    padding: 20px;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: transparent; /* Make the background transparent for the container */
+}
+
+.left, .right {
+    display: flex; /* Enable flexbox for the sections */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: space-between; /* Evenly space out contents */
+    width: 45%;
+    text-align: center;
+    margin: 0 10px; /* Adjust margin for spacing */
+    padding: 20px;
+    background-color: #fff; /* White background for each section */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #E17888, #AE3B8B, #1C5789, #341514);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease;
+    margin: 10px 0;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #AE3B8B, #1C5789, #341514);
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    resize: vertical;
+    margin: 10px 0;
+}
+
+select {
+    appearance: none;
+    border: 0;
+    box-shadow: none;
+    padding: 10px;
+    color: #fff;
+    background: linear-gradient(135deg, #E17888, #AE3B8B, #1C5789, #341514);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px 0;
+    width: 100%;
+}
+
+option {
+    background-color: #2c3e50;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+textarea {
+    width: 100%;
+    max-width: 100%; /* Ensure it doesn't exceed the container width */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    resize: vertical;
+    margin: 10px 0; /* Space around the textarea */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}

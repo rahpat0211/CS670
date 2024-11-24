@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Clue</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='javascript/index.js') }}"></script>
+</head>
+<body>
+<div class="container" id="mainContent">
+    <h1>Welcome to Clue</h1>
+    <button id="letsPlayButton" onclick="showCharacterSelection()">Let's Play!</button>
+
+    <form action="/download-layout" method="post">
+        <button type="submit">Download Game Layout</button>
+    </form>
+</div>
+
+<div class="container selection" id="characterSelection">
+    <form action="/select-character" method="post">
+        <h2>Select Your Character</h2>
+        {% for character in characters %}
+        <label>
+            <input type="radio" name="character" value="{{ character }}"> {{ character }}
+        </label>
+        {% endfor %}
+        <input type="submit" value="Start Game">
+    </form>
+</div>
+</body>
+</html>

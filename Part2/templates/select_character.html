@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Selected</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1>Character Selected</h1>
+    <p>You have selected: <strong>{{ character }}</strong></p>
+    <form action="/choose-room" method="get">
+        <button type="submit">Choose a Room</button>
+    </form>
+</div>
+</body>
+</html>

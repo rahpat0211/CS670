@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make a Suggestion</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='javascript/suggestion.js') }}"></script>
+</head>
+<body>
+    <button class="button" style="position: absolute; top: 20px; right: 20px;" onclick="viewDeductions()">View Deductions</button>
+    <div class="container">
+        <h1>Make a Suggestion</h1>
+        <form id="suggestion-form">
+            <div class="select">
+                <select id="character" name="character">
+                    {% for character in characters %}
+                    <option value="{{ character }}">{{ character }}</option>
+                    {% endfor %}
+                </select>
+            </div><br>
+
+            <div class="select">
+                <select id="room" name="room">
+                    {% for room in rooms %}
+                    <option value="{{ room }}">{{ room }}</option>
+                    {% endfor %}
+                </select>
+            </div><br>
+
+            <div class="select">
+                <select id="weapon" name="weapon">
+                    {% for weapon in weapons %}
+                    <option value="{{ weapon }}">{{ weapon }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <!-- Only show these buttons -->
+            <button type="button" onclick="submitSuggestion()">Submit Suggestion</button>
+            <button type="button" onclick="navigateToRoom()">Navigate to Room</button>
+        </form>
+
+        <!-- Response message will be displayed here -->
+        <div id="response-message"></div>
+
+        <!-- Button to add deduction, initially hidden -->
+        <button id="add-deduction-btn" style="display: none;">Add To Deduction</button>
+    </div>
+</body>
+</html>

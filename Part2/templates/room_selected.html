@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Overview</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='overview.css') }}">
+    <script src="{{ url_for('static', filename='javascript/roomSelected.js') }}"></script>
+    <style>
+        #refute-suggestion-section {
+            display: none; /* Hide the section initially */
+        }
+    </style>
+</head>
+<body>
+    <button class="button" style="position: absolute; top: 20px; right: 20px;" onclick="viewDeductions()">View Deductions</button> <!-- New Button -->
+
+    <div class="container">
+        <div class="left">
+            <h2>Choose What's Next?</h2>
+            <h3>Choose a Room</h3>
+            <form action="/choose-room" method="GET">
+                <button type="submit">Choose Room</button>
+            </form>
+
+            <h3>Make a Suggestion</h3>
+            <form id="suggestion-form" method="GET" action="/make-suggestion">
+                <button type="submit">Make a Suggestion</button>
+            </form>
+        </div>
+
+        <div class="right">
+            <h2>Your Information!</h2>
+            <h3>Your Deductions</h3>
+            <textarea id="deductions" rows="4" placeholder="Write your deductions here..."></textarea>
+            <button onclick="saveDeductions()">Save Deductions</button>
+            <button onclick="clearDeductions()">Clear Deductions</button>
+
+            <div id="refute-suggestion-section">
+                <h3>Player Cards That Match Suggestion</h3>
+                <div id="player-cards">
+                    <!-- Dynamically populate this with player cards -->
+                </div>
+            </div>
+            <button onclick="refuteSuggestion()">Refute Suggestion</button>
+        </div>
+    </div>
+</body>
+</html>
