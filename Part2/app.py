@@ -115,6 +115,7 @@ def make_suggestion():
 
 @app.route('/submit-suggestion', methods=['POST'])
 def submit_suggestion():
+    global solution
     character = request.form['character']
     room = request.form['room']
     weapon = request.form['weapon']
@@ -126,6 +127,10 @@ def submit_suggestion():
         message = "Congratulations! Your suggestion is correct."
         correct = True
         session.pop('attempts', None)  # Clear attempts on success
+        
+        session.clear()
+        solution = gather_solution(reinitialize=True)
+        print(f"New Solution: {solution}")
         
     else:
         attempts = session.get('attempts', 0) + 1
