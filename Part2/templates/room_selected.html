@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Overview</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='overview.css') }}">
-    <script src="{{ url_for('static', filename='javascript/roomSelected.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/overview.css') }}">
     <style>
         #refute-suggestion-section {
             display: none; /* Hide the section initially */
@@ -45,5 +44,6 @@
             <button onclick="refuteSuggestion()">Refute Suggestion</button>
         </div>
     </div>
+<script src="{{ url_for('static', filename='javascript/roomSelected.js') }}"></script>
 </body>
 </html>

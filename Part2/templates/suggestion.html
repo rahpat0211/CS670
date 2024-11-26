@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Make a Suggestion</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <script src="{{ url_for('static', filename='javascript/suggestion.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <button class="button" style="position: absolute; top: 20px; right: 20px;" onclick="viewDeductions()">View Deductions</button>
@@ -13,7 +12,7 @@
         <h1>Make a Suggestion</h1>
         <form id="suggestion-form">
             <div class="select">
-                <select id="character" name="character">
+                <select id="character" name="character" required>
                     {% for character in characters %}
                     <option value="{{ character }}">{{ character }}</option>
                     {% endfor %}
@@ -21,7 +20,7 @@
             </div><br>
 
             <div class="select">
-                <select id="room" name="room">
+                <select id="room" name="room" required>
                     {% for room in rooms %}
                     <option value="{{ room }}">{{ room }}</option>
                     {% endfor %}
@@ -29,7 +28,7 @@
             </div><br>
 
             <div class="select">
-                <select id="weapon" name="weapon">
+                <select id="weapon" name="weapon" required>
                     {% for weapon in weapons %}
                     <option value="{{ weapon }}">{{ weapon }}</option>
                     {% endfor %}
@@ -47,5 +46,6 @@
         <!-- Button to add deduction, initially hidden -->
         <button id="add-deduction-btn" style="display: none;">Add To Deduction</button>
     </div>
+<script src="{{ url_for('static', filename='javascript/suggestion.js') }}"></script>
 </body>
 </html>

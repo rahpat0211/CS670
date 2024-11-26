@@ -4,16 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Choose a Room</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
 
 <div class="container room" id="mainContent">
-    <form action="/choose-room" method="post">
+    <form action="/choose-room" method="post" >
         <h2>Choose A Room</h2>
           {% for room in rooms %}
         <label>
-            <input type="radio" name="room" value="{{ room }}"> {{ room }}
+            <input type="radio" name="room" value="{{ room }}" required> {{ room }}
         </label>
           {% endfor %}
           <button type="submit">Select Room</button>

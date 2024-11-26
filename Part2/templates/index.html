@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Clue</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <script src="{{ url_for('static', filename='javascript/index.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
 <div class="container" id="mainContent">
@@ -28,5 +27,6 @@
         <input type="submit" value="Start Game">
     </form>
 </div>
+<script src="{{ url_for('static', filename='javascript/index.js') }}"></script>
 </body>
 </html>
