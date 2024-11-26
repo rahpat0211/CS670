@@ -1,15 +1,10 @@
 import os
 import json
 from flask import Flask, render_template, request, session, jsonify
-
-from defaults.mansion import *
-from defaults.weapons import *
-from defaults.characters import *
-from defaults.solution import gather_solution
 from summary_generation import *
 
 app = Flask(__name__)
-app.secret_key = 'niki0211'
+app.secret_key = 'your_secret_key_here' # Define your secret key here
 
 # Define the path for the session file
 SESSION_FILE = 'session_data.json'
