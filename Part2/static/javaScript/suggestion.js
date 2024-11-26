@@ -100,3 +100,5 @@ function viewDeductions() {
         })
         .catch(error => console.error('Error fetching deductions:', error));
 }
+
+document.addEventListener('DOMContentLoaded', function() { function submitSuggestion() { console.log("Submitting suggestion..."); } document.getElementById('submit-suggestion-btn').addEventListener('click', function() { submitSuggestion(); }); });
