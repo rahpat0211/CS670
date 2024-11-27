@@ -17,11 +17,13 @@
 * python app.py
 * File containing Game Set Up will open automatically and be saved under 'Layout' directory
 
+<hr>
+
 # How the game works!
 
 ## Step 1: Home Page
 * Let's Play! (Button)
-    * Starts the Clue Game (Continue to Step 2)
+    * Starts the Clue Game (<i><b>Refer to Step 2</b></i>)
 
 * Download Game Layout (Button)
     * An xlsx file will be saved automatically under the 'Layout' folder
@@ -57,7 +59,7 @@
 
 ## Step 3: Room Selection
 * You will now have to select a room inside the mansion.
-    * You can always navigate to different rooms (Follow Step 4)
+    * You can always navigate to different rooms (<i><b>Refer to Step 4</b></i>)
 * NOTE: You MUST select a room to continue to Step 4
 
     <br>
@@ -66,4 +68,19 @@
     </div>
     <br>
 
-## Step 4: 
+## Step 4: Overview Page
+<br>
+<div align="left">
+    <img src="step_images/Step_4A.png" alt="Room Selection" width="400"/> 
+</div>
+<br>
+
+* Left Box (<b>Choose What's Next?</b>)
+  * You have the ability to navigate through different rooms (<i><b>Refer to Step 3</b></i>)
+  * You have the ability to suggest who the culprit is (<i><b>Refer to Step 5</b></i>)
+* Right Box (<b>Your Information!</b>)
+  * You have the ability to make any deductions
+  * You have the ability to save or clear out your deductions 
+    * If cleared, your session will be cleared of all your saved deductions
+  * You have the ability to refute a suggestion
+    * Cards will show if there is a match in the culprit's actions
