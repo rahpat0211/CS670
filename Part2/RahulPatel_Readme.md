@@ -71,7 +71,7 @@
 ## Step 4: Overview Page
 <br>
 <div align="left">
-    <img src="step_images/Step_4A.png" alt="Room Selection" width="400"/> 
+    <img src="step_images/Step_4.png" alt="Room Selection" width="400"/> 
 </div>
 <br>
 
