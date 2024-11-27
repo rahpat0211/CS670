@@ -29,25 +29,41 @@
     * The xlsx file contains the information regarding the Game Setup
         * Solution will be shown under 'Solution Selection' sheet
         * All other setups will be shown under their respective sheets
-
-![Home Page](step_images/Step_1.png)
+      
+    <br>
+    <div align="left">
+        <img src="step_images/Step_1.png" alt="Home Page" width="300"/> 
+    </div>
+    <br>
 
 ## Step 2: Character Selection
 * You have the option to select a character from the form. 
     * The character chosen, will be saved throughout the rest of the game.
     * NOTE: You MUST select a character to continue to Step 3.
   
-![Character Selection](step_images/Step_2.png)
+    <br>
+    <div align="left">
+        <img src="step_images/Step_2.png" alt="Character Selection" width="300"/> 
+    </div>
+    <br>
 
 * Character Selection Confirmation 
 
-![Character Selection Confirm](step_images/Step_2B.png)
+    <br>
+    <div align="left">
+        <img src="step_images/Step_2B.png" alt="Character Selection Confirmation" width="300"/> 
+    </div>
+    <br>
 
 ## Step 3: Room Selection
 * You will now have to select a room inside the mansion.
     * You can always navigate to different rooms (Follow Step 4)
 * NOTE: You MUST select a room to continue to Step 4
 
-![Room Selection](step_images/Step_3.png)
+    <br>
+    <div align="left">
+        <img src="step_images/Step_3.png" alt="Room Selection" width="300"/> 
+    </div>
+    <br>
 
 ## Step 4: 
