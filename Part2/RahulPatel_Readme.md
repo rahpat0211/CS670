@@ -84,3 +84,32 @@
     * If cleared, your session will be cleared of all your saved deductions
   * You have the ability to refute a suggestion
     * Cards will show if there is a match in the culprit's actions
+
+## Step 5: Make A Suggestion
+<br>
+<div align="left">
+    <img src="step_images/Step_5A.png" alt="Suggestion" width="400"/> 
+</div>
+<br>
+
+* From the dropdown list you MUST select one of the following:
+  * <b>Character
+  * Room
+  * Weapon</b>
+
+### Trials
+* First Retry:
+  * If the suggestion is incorrect, a message will be shown indicating the wrong suggestion
+        <br>
+        <div align="left">
+            <img src="step_images/Step_5B.png" alt="Suggestion" width="400"/> 
+        </div>
+        <br>
+* All trials after the first retry:
+  * If the suggestion is still incorrect, you will receive different hints until all 3 hints are given
+      <br>
+      <div align="left">
+          <img src="step_images/Step_5C.png" alt="Suggestion" width="400"/> 
+      </div>
+      <br>
+    
