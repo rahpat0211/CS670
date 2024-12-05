@@ -1,16 +1,17 @@
 let firstSubmission = true;
 
 // Function to submit suggestion
-const submitSuggestion = () => {
+const submitSuggestion = async () => {
     const form = document.getElementById('suggestion-form');
     if (!form) return console.error('Form element not found');
 
-    fetch('/submit-suggestion', {
-        method: 'POST',
-        body: new FormData(form)
-    })
-    .then(response => response.json())
-    .then(data => {
+    try {
+        const response = await fetch('/submit-suggestion', {
+            method: 'POST',
+            body: new FormData(form)
+        });
+        const data = await response.json();
+
         const responseMessage = document.getElementById('response-message');
         if (!responseMessage) return console.error('Response message element not found');
 
@@ -22,18 +23,26 @@ const submitSuggestion = () => {
 
         if (data.correct) {
             alert('Congratulations! Your suggestion is correct.');
-            fetch('/refresh-session', { method: 'POST' })
-                .then(() => window.location.href = '/');  // Navigate to the home page
+            await fetch('/refresh-session', { method: 'POST' });
+            window.location.href = '/';
         }
 
         firstSubmission = false;
-    })
-    .catch(error => console.error('Error:', error));
+    } catch (error) {
+        console.error('Error:', error);
+    }
 };
 
 // Function to navigate to room selection
 const navigateToRoom = () => window.location.href = '/choose-room';
 
+// Example function to refute suggestion
+const refuteSuggestion = () => {
+    console.log('Refute suggestion function called');
+    alert('Suggestion has been refuted!');
+};
+
+// Event listener registration
 document.addEventListener('DOMContentLoaded', () => {
     const addDeductionBtn = document.getElementById('add-deduction-btn');
     if (addDeductionBtn) {
@@ -55,6 +64,11 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         console.error('Add Deduction button not found');
     }
+
+    document.getElementById('submit-suggestion-btn')?.addEventListener('click', submitSuggestion);
+
+    // Assuming there's a button for refuting suggestions
+    document.getElementById('refute-suggestion-btn')?.addEventListener('click', refuteSuggestion);
 });
 
 // Function to view deductions
@@ -67,7 +81,3 @@ const viewDeductions = () => {
         })
         .catch(error => console.error('Error fetching deductions:', error));
 };
-
-document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('submit-suggestion-btn')?.addEventListener('click', submitSuggestion);
-});
