@@ -21,7 +21,7 @@
         <h2>Select Your Character</h2>
         {% for character in characters %}
         <label>
-            <input type="radio" name="character" value="{{ character }}"> {{ character }}
+            <input type="radio" name="character" value="{{ character }}" required> {{ character }}
         </label>
         {% endfor %}
         <input type="submit" value="Start Game">
